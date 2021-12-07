@@ -1,26 +1,40 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "#components/*": ["src/components/*"],
-      "#styles/*": ["src/styles/*"]
-    },
     "strictNullChecks": true,
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "lib": ["DOM", "ES2017"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ESNext",
+    "typeRoots": ["./node_modules/@types", "src/types"],
+    "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "#apis/*": ["src/apis/*"],
+      "#commons/*": ["src/commons/*"],
+      "#components/*": ["src/components/*"],
+      "#pages/*": ["src/pages/*"],
+      "#styles/*": ["src/styles/*"],
+      "#utils/*": ["src/utils/*"]
+    },
+    "rootDir": ".",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*"],
+  "exclude": ["node_modules", "babel.config.js"]
 }
