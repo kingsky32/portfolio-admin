@@ -1,7 +1,6 @@
 :root {
   --sj-black: #333333;
   --sj-link: #1e70cd;
-  --sj-placeholder: #cccccc;
   --sj-white: #ffffff;
-  --sj-border-color: #cccccc;
+  --sj-gray: #cccccc;
 }
