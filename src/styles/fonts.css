@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-thin.woff2') format('woff2'), url('/fonts/s-core-dream-thin.woff') format('woff'),
-    url('/fonts/s-core-dream-thin.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-thin.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-thin.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-thin.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -9,9 +10,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-extra-light.woff2') format('woff2'),
-    url('/fonts/s-core-dream-extra-light.woff') format('woff'),
-    url('/fonts/s-core-dream-extra-light.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-extra-light.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-extra-light.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-extra-light.ttf') format('truetype');
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -19,8 +20,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-light.woff2') format('woff2'), url('/fonts/s-core-dream-light.woff') format('woff'),
-    url('/fonts/s-core-dream-light.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-light.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-light.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -28,8 +30,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-regular.woff2') format('woff2'), url('/fonts/s-core-dream-regular.woff') format('woff'),
-    url('/fonts/s-core-dream-regular.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-regular.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-regular.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -37,8 +40,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-medium.woff2') format('woff2'), url('/fonts/s-core-dream-medium.woff') format('woff'),
-    url('/fonts/s-core-dream-medium.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-medium.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-medium.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -46,8 +50,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-bold.woff2') format('woff2'), url('/fonts/s-core-dream-bold.woff') format('woff'),
-    url('/fonts/s-core-dream-bold.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-bold.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-bold.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -55,9 +60,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-extra-bold.woff2') format('woff2'),
-    url('/fonts/s-core-dream-extra-bold.woff') format('woff'),
-    url('/fonts/s-core-dream-extra-bold.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-extra-bold.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-extra-bold.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-extra-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -65,8 +70,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-heavy.woff2') format('woff2'), url('/fonts/s-core-dream-heavy.woff') format('woff'),
-    url('/fonts/s-core-dream-heavy.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-heavy.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-heavy.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-heavy.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -74,8 +80,9 @@
 
 @font-face {
   font-family: 'S-Core Dream';
-  src: url('/fonts/s-core-dream-black.woff2') format('woff2'), url('/fonts/s-core-dream-black.woff') format('woff'),
-    url('/fonts/s-core-dream-black.ttf') format('truetype');
+  src: url('/fonts/s-core-dream/s-core-dream-black.woff2') format('woff2'),
+    url('/fonts/s-core-dream/s-core-dream-black.woff') format('woff'),
+    url('/fonts/s-core-dream/s-core-dream-black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;

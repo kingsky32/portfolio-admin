@@ -6,7 +6,6 @@ class RootDocument extends Document {
       <Html lang="ko" id="seung-ju">
         <Head>
           <meta charSet="utf-8" />
-          
           <meta name="description" content="Seung Ju | Admin" />
           <meta property="og:title" content="Seung Ju | Admin" />
           <meta property="og:description" content="Seung Ju | Admin" />

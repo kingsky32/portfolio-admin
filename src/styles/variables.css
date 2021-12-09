@@ -1,6 +1,30 @@
 :root {
-  --sj-black: #333333;
-  --sj-link: #1e70cd;
-  --sj-white: #ffffff;
-  --sj-gray: #cccccc;
+  --primary-text: #e4e6eb;
+  --primary-hover-text: hsl(223, 15%, 80%);
+  --placeholder: #bcbcbc;
+
+  --layout-horizontal-padding: 1.5rem;
+
+  --input-horizontal-padding: 1.5rem;
+  --input-height: 4.5rem;
+  --input-border: #e13652;
+  --input-border-radius: 3rem;
+
+  --primary-icon: #cccccc;
+  --primary-message-text: #e13652;
+  --primary-button-text: #ffffff;
+  --primary-button-background: #e13652;
+  --primary-button-disabled-background: #9b172d;
+  --primary-button-hover-background: #c81e3a;
+
+  --background: #24253b;
+
+  --black: #333333;
+  --link: #1e70cd;
+  --white: #ffffff;
+  --gray: #cccccc;
+
+  --caret-color: #ffffff;
+
+  --button-height: 4.5rem;
 }
