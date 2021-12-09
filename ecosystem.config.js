@@ -5,14 +5,14 @@ module.exports = {
     {
       name: 'seung-ju-admin',
       script: 'node_modules/next/dist/bin/next',
-      args: 'start'
+      args: 'start',
       instances: 0,
       autorestart: true,
       watch: false,
       exec_mode: 'cluster',
 
       output: '~/logs/pm2/console.log',
-      error: '~/logs/pm2/onsoleError.log'
+      error: '~/logs/pm2/onsoleError.log',
     },
   ],
 };
