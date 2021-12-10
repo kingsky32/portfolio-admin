@@ -53,7 +53,7 @@ const initialRequestBody = {
 } as PostAuthLoginRequestBody;
 
 const Home: NextPage = (): React.ReactElement => {
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies, _, removeCookie] = useCookies();
   const prevPage = cookies[PREV_PAGE] ?? '/';
   const router = useRouter();
   const [isAutoLogin, setIsAutoLogin] = React.useState<boolean>(false);
