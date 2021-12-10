@@ -53,7 +53,7 @@ const initialRequestBody = {
 } as PostAuthLoginRequestBody;
 
 const Home: NextPage = (): React.ReactElement => {
-  const [cookies] = useCookies();
+  const [cookies, setCookie, removeCookie] = useCookies();
   const prevPage = cookies[PREV_PAGE] ?? '/';
   const router = useRouter();
   const [isAutoLogin, setIsAutoLogin] = React.useState<boolean>(false);
@@ -72,6 +72,7 @@ const Home: NextPage = (): React.ReactElement => {
         setLoading(true);
         await login(requestBody, isAutoLogin);
         router.replace(prevPage);
+        removeCookie(PREV_PAGE);
       } catch (error) {
         handleError(error);
       } finally {
