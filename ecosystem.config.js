@@ -5,7 +5,7 @@ module.exports = {
     {
       name: 'seung-ju-admin',
       script: 'node_modules/next/dist/bin/next',
-      args: 'start',
+      args: 'start -p 3001',
       instances: 0,
       autorestart: true,
       watch: false,
