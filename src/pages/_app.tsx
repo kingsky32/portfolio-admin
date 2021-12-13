@@ -6,7 +6,6 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router, useRouter } from 'next/router';
 import nProgress from 'nprogress';
-import Layout from '#components/layout/Layout';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'nprogress/nprogress.css';
@@ -16,6 +15,8 @@ import '#styles/reset.css';
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faSquare } from '@fortawesome/free-regular-svg-icons';
 import Provider from '#components/Provider';
+import AuthLayout from '#components/layout/AuthLayout';
+import DefaultLayout from '#components/layout/DefaultLayout';
 import { Token } from '#apis/auth';
 import { useProfile } from '#contexts/auth';
 import { useCookies } from 'react-cookie';
@@ -78,21 +79,23 @@ const Root = React.memo(({ children }: React.HTMLAttributes<HTMLElement>): React
     return null;
   }
 
-  return <>{children}</>;
+  if (Boolean(profile) === true) {
+    return <DefaultLayout>{children}</DefaultLayout>;
+  }
+
+  return <AuthLayout>{children}</AuthLayout>;
 });
 
 const MyApp = function ({ Component, pageProps }: AppProps): React.ReactElement {
   return (
     <Provider>
-      <Layout>
-        <Head>
-          <title>Admin | Seung Ju</title>
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        </Head>
-        <Root>
-          <Component {...pageProps} />
-        </Root>
-      </Layout>
+      <Head>
+        <title>Admin | Seung Ju</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Root>
+        <Component {...pageProps} />
+      </Root>
     </Provider>
   );
 };

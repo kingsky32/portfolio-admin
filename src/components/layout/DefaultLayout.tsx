@@ -1,6 +1,7 @@
+import React from 'react';
+import styled from '@emotion/styled';
 import Header from './Header';
 import Footer from './Footer';
-import styled from '@emotion/styled';
 
 export interface LayoutProps {
   children?: React.ReactNode;
@@ -18,14 +19,14 @@ const Main = styled.main`
   flex-flow: column nowrap;
 `;
 
-const Layout = ({ children }: LayoutProps): React.ReactElement => {
+const DefaultLayout = React.forwardRef<HTMLDivElement, LayoutProps>(({ children }, ref) => {
   return (
-    <Container>
+    <Container ref={ref}>
       <Header />
       <Main>{children}</Main>
       <Footer />
     </Container>
   );
-};
+});
 
-export default Layout;
+export default DefaultLayout;

@@ -14,8 +14,9 @@ export function setToken(data?: Token | null, isAutoLogin?: boolean): void {
 
   if (Boolean(access_token)) {
     restApi.defaults.headers.common.authorization = `${TOKEN_TYPE} ${access_token}`;
+    window.localStorage.setItem(TOKEN_STORE_KEY, JSON.stringify(data));
     if (isAutoLogin) {
-      window.localStorage.setItem(TOKEN_STORE_KEY, JSON.stringify(data));
+      // TODO: Auto Login
     }
   } else {
     delete restApi.defaults.headers.common.authorization;
