@@ -10,7 +10,7 @@
   --input-border: #e13652;
   --input-border-radius: 3rem;
 
-  --primary-icon: #cccccc;
+  --primary-icon: #ffffff;
   --primary-message-text: #e13652;
   --primary-button-text: #ffffff;
   --primary-button-background: #e13652;
@@ -18,9 +18,16 @@
   --primary-button-hover-background: #c81e3a;
 
   --background: #24253b;
+  --header-background: #1f2033;
+
+  --menu-background: #1f2033;
+  --menu-list-height: 4.5rem;
+  --menu-text: #ffffff;
+  --menu-active-text: #ffffff;
+  --menu-active-text-background: #1d1e2f;
 
   --black: #333333;
-  --link: #1e70cd;
+  --link: #24384e;
   --white: #ffffff;
   --gray: #cccccc;
 

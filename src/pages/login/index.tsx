@@ -111,7 +111,7 @@ const Home: NextPage = (): React.ReactElement => {
                 }),
               );
             }}
-            prefix={<FontAwesomeIcon icon="user" size="lg" color="var(--primary-icon)" />}
+            prefix={<FontAwesomeIcon icon="user" size="lg" color="#cccccc" />}
             placeholder="Username"
           />
           <Input
@@ -124,7 +124,7 @@ const Home: NextPage = (): React.ReactElement => {
                 }),
               );
             }}
-            prefix={<FontAwesomeIcon icon="lock" size="lg" color="var(--primary-icon)" />}
+            prefix={<FontAwesomeIcon icon="lock" size="lg" color="#cccccc" />}
             placeholder="Password"
           />
           <CheckboxContainer>

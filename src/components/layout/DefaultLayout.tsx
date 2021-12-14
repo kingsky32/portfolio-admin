@@ -11,7 +11,6 @@ export interface LayoutProps {
 const Container = styled.div`
   min-height: 100vh;
   display: flex;
-  flex-flow: column nowrap;
 `;
 
 const Main = styled.main`
@@ -19,17 +18,21 @@ const Main = styled.main`
   display: flex;
 `;
 
-const ContentsContainer = styled.div``;
+const ContentsContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+`;
 
 const DefaultLayout = React.forwardRef<HTMLDivElement, LayoutProps>(({ children }, ref) => {
   return (
     <Container ref={ref}>
-      <Header />
-      <Main>
-        <AsideNavigation />
-        <ContentsContainer>{children}</ContentsContainer>
-      </Main>
-      <Footer />
+      <AsideNavigation />
+      <ContentsContainer>
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
+      </ContentsContainer>
     </Container>
   );
 });
