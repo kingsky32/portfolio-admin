@@ -149,7 +149,7 @@ const navigation = [
   },
 ];
 
-const AsideNavigation = (): React.ReactElement => {
+const AsideNavigation = (props: React.HTMLAttributes<HTMLElement>): React.ReactElement => {
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
   const router = useRouter();
 
@@ -162,7 +162,7 @@ const AsideNavigation = (): React.ReactElement => {
   }
 
   return (
-    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <Container onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} {...props}>
       <LogoContainer>
         <Link href="/">
           <a title="main">

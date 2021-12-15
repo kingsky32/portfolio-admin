@@ -11,11 +11,18 @@ export interface LayoutProps {
 const Container = styled.div`
   min-height: 100vh;
   display: flex;
+  padding-left: 5rem;
 `;
 
 const Main = styled.main`
   flex: 1;
   display: flex;
+`;
+
+const EAsideNavigation = styled(AsideNavigation)`
+  position: fixed;
+  left: 0;
+  height: 100%;
 `;
 
 const ContentsContainer = styled.div`
@@ -27,7 +34,7 @@ const ContentsContainer = styled.div`
 const DefaultLayout = React.forwardRef<HTMLDivElement, LayoutProps>(({ children }, ref) => {
   return (
     <Container ref={ref}>
-      <AsideNavigation />
+      <EAsideNavigation />
       <ContentsContainer>
         <Header />
         <Main>{children}</Main>

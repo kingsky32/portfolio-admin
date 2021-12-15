@@ -34,17 +34,30 @@ export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElem
   bordered?: boolean;
   gap?: number;
   message?: string;
+  borderColor?: string;
+  width?: string;
+  height?: number;
+  backgroundColor?: string;
 }
 
 const Container = styled.div``;
 
-const InputContainer = styled.div<{ gap: number }>`
+const InputContainer = styled.div<{
+  gap: number;
+  bordered?: boolean;
+  borderColor?: string;
+  width?: string;
+  height?: number;
+  backgroundColor?: string;
+}>`
+  width: ${({ width }) => width ?? 'auto'};
   padding: 0 var(--input-horizontal-padding);
-  height: var(--input-height);
+  height: ${({ height }) => (height ? `${height}rem` : 'var(--input-height)')};
   border-radius: var(--input-border-radius);
   border-width: 1px;
-  border-style: solid;
-  border-color: var(--input-border);
+  border-style: ${({ bordered }) => (bordered ? 'solid' : 'none')};
+  border-color: ${({ borderColor }) => borderColor ?? 'var(--input-border)'};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   display: flex;
   align-items: center;
   gap: ${({ gap }) => `${gap}rem`};
@@ -81,10 +94,32 @@ const Message = styled.p`
 `;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ prefix, suffix, allowClear, gap = 1, bordered, message, ...inputProps }, ref): React.ReactElement => {
+  (
+    {
+      prefix,
+      suffix,
+      allowClear,
+      gap = 1,
+      bordered = true,
+      message,
+      borderColor,
+      width,
+      height,
+      backgroundColor,
+      ...inputProps
+    },
+    ref,
+  ): React.ReactElement => {
     return (
       <Container>
-        <InputContainer gap={gap}>
+        <InputContainer
+          gap={gap}
+          bordered={bordered}
+          borderColor={borderColor}
+          width={width}
+          height={height}
+          backgroundColor={backgroundColor}
+        >
           {Boolean(prefix) && <Prefix>{prefix}</Prefix>}
           <OriginInput ref={ref} {...inputProps} />
           {Boolean(suffix) && <Suffix>{suffix}</Suffix>}

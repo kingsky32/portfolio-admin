@@ -3,11 +3,13 @@
   --primary-hover-text: hsl(223, 15%, 80%);
   --placeholder: #bcbcbc;
 
+  --main-color: #e13652;
+
   --layout-horizontal-padding: 1.5rem;
 
   --input-horizontal-padding: 1.5rem;
   --input-height: 4.5rem;
-  --input-border: #e13652;
+  --input-border: #9c9c9c;
   --input-border-radius: 3rem;
 
   --primary-icon: #ffffff;
@@ -20,7 +22,7 @@
   --background: #24253b;
   --header-background: #1f2033;
 
-  --menu-background: #1f2033;
+  --menu-background: #18181b;
   --menu-list-height: 4.5rem;
   --menu-text: #ffffff;
   --menu-active-text: #ffffff;

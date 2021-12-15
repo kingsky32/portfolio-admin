@@ -113,6 +113,7 @@ const Home: NextPage = (): React.ReactElement => {
             }}
             prefix={<FontAwesomeIcon icon="user" size="lg" color="#cccccc" />}
             placeholder="Username"
+            borderColor="var(--main-color)"
           />
           <Input
             type="password"
@@ -126,6 +127,7 @@ const Home: NextPage = (): React.ReactElement => {
             }}
             prefix={<FontAwesomeIcon icon="lock" size="lg" color="#cccccc" />}
             placeholder="Password"
+            borderColor="var(--main-color)"
           />
           <CheckboxContainer>
             <Checkbox checked={isAutoLogin} onChange={handleChangeIsAutoLogin}>
