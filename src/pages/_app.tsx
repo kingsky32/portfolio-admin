@@ -12,7 +12,7 @@ import 'nprogress/nprogress.css';
 import '#styles/variables.css';
 import '#styles/fonts.css';
 import '#styles/reset.css';
-import { faAngleDown, faCog, faLock, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faCog, faHome, faLock, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCheckSquare, faSquare } from '@fortawesome/free-regular-svg-icons';
 import Provider from '#components/Provider';
 import AuthLayout from '#components/layout/AuthLayout';
@@ -23,7 +23,7 @@ import { useCookies } from 'react-cookie';
 import { PREV_PAGE } from '#commons/contants';
 
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
-library.add(faUser, faLock, faSquare, faCheckSquare, faAngleDown, faCog, faSearch);
+library.add(faUser, faLock, faSquare, faCheckSquare, faAngleDown, faCog, faSearch, faHome);
 
 Router.events.on('routeChangeStart', () => {
   nProgress.start();

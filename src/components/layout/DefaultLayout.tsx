@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Header from './Header';
 import Footer from './Footer';
-import AsideNavigation from './AsideNavigation';
+import OriginAsideNavigation from './AsideNavigation';
 
 export interface LayoutProps {
   children?: React.ReactNode;
@@ -19,7 +19,7 @@ const Main = styled.main`
   display: flex;
 `;
 
-const EAsideNavigation = styled(AsideNavigation)`
+const AsideNavigation = styled(OriginAsideNavigation)`
   position: fixed;
   left: 0;
   height: 100%;
@@ -34,7 +34,7 @@ const ContentsContainer = styled.div`
 const DefaultLayout = React.forwardRef<HTMLDivElement, LayoutProps>(({ children }, ref) => {
   return (
     <Container ref={ref}>
-      <EAsideNavigation />
+      <AsideNavigation />
       <ContentsContainer>
         <Header />
         <Main>{children}</Main>

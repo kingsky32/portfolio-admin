@@ -5,6 +5,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logo from '#components/icon/Logo';
+import routes from '#commons/routes';
 
 const LogoContainer = styled.h1`
   margin-bottom: 2rem;
@@ -27,8 +28,7 @@ const NavigationListContainer = styled.ul``;
 
 const NavigationList = styled.li<{ isOpen?: boolean; length: number; active: boolean }>`
   width: 100%;
-  height: ${({ isOpen, length }) =>
-    isOpen ? `calc(var(--menu-list-height) * ${length + 1})` : `var(--menu-list-height)`};
+  height: ${({ isOpen, length }) => (isOpen ? `calc(4.5rem * ${length + 1})` : `4.5rem`)};
   overflow: hidden;
   transition: ${({ length }) => length * 0.15}s height ease-out;
 
@@ -36,15 +36,15 @@ const NavigationList = styled.li<{ isOpen?: boolean; length: number; active: boo
     width: 100%;
     padding: 0 1.8rem;
     display: flex;
-    height: var(--menu-list-height);
+    height: 4.5rem;
     align-items: center;
     transition: 0.25s background ease;
+
     ${({ active }) =>
       active &&
       css`
         background-color: var(--menu-active-text-background);
       `}
-
     &:hover {
       span {
         opacity: 0.8 !important;
@@ -82,15 +82,17 @@ const NavigationSubList = styled.li<{ active: boolean }>`
     width: 100%;
     padding: 0 2rem;
     display: flex;
-    height: var(--menu-list-height);
+    height: 4.5rem;
     align-items: center;
     justify-content: center;
     transition: 0.25s background ease;
+
     &:hover {
       span {
         opacity: 0.8;
       }
     }
+
     ${({ active }) =>
       active &&
       css`
@@ -117,37 +119,25 @@ const Container = styled.aside`
   width: 5rem;
   overflow: hidden;
   transition: 0.25s width ease;
+
   &:hover {
     width: 20rem;
+
     ${Icon} {
       margin-right: 1.5rem;
     }
+
     ${NavigationList} {
       span {
         opacity: 1;
       }
     }
+
     ${AngleDown} {
       opacity: 1;
     }
   }
 `;
-
-const navigation = [
-  {
-    key: 'settings',
-    name: 'Settings',
-    uri: '/settings',
-    icon: <FontAwesomeIcon icon="cog" size="lg" />,
-    children: [
-      {
-        key: 'codes',
-        name: 'Codes',
-        uri: '/settings/codes',
-      },
-    ],
-  },
-];
 
 const AsideNavigation = (props: React.HTMLAttributes<HTMLElement>): React.ReactElement => {
   const [isFocus, setIsFocus] = React.useState<boolean>(false);
@@ -172,42 +162,48 @@ const AsideNavigation = (props: React.HTMLAttributes<HTMLElement>): React.ReactE
       </LogoContainer>
       <Navigation>
         <NavigationListContainer>
-          {navigation.map(({ key, name, children, uri, icon }) => {
+          {routes.map(({ key, name, children, uri, exact, icon }) => {
             const [isOpen, setIsOpen] = React.useState<boolean>(false);
-            const active: boolean = router.pathname.startsWith(uri);
+            const active: boolean = exact === true ? router.pathname === uri : router.pathname.startsWith(uri);
 
             function handleToggleMenu(): void {
               setIsOpen((prevState) => !prevState);
             }
 
-            function handleClosemenu(): void {
+            function handleCloseMenu(): void {
               setIsOpen(false);
             }
 
             function handleClick(event: React.MouseEvent<HTMLAnchorElement>): void {
-              if (Boolean(children) === true) {
+              if (Boolean(children)) {
                 event.preventDefault();
                 handleToggleMenu();
               }
             }
 
             React.useEffect(() => {
-              handleClosemenu();
+              handleCloseMenu();
             }, [isFocus]);
 
             return (
-              <NavigationList isOpen={isOpen} length={children.length} key={key} active={active}>
+              <NavigationList isOpen={isOpen} length={children?.length ?? 1} key={key} active={active}>
                 <Link href={uri}>
                   <a onClick={handleClick}>
-                    {Boolean(icon) && <Icon>{icon}</Icon>}
+                    {Boolean(icon) && (
+                      <Icon>
+                        <FontAwesomeIcon icon={icon} />
+                      </Icon>
+                    )}
                     <span>{name}</span>
-                    <AngleDown icon="angle-down" size="lg" />
+                    {Array.isArray(children) && <AngleDown icon="angle-down" size="lg" />}
                   </a>
                 </Link>
-                {children.length > 0 && (
+                {Array.isArray(children) && children.length > 0 && (
                   <NavigationSubListContainer>
                     {children.map(({ key, name, uri }) => {
-                      const active: boolean = router.pathname.startsWith(uri);
+                      const active: boolean =
+                        exact === true ? router.pathname === uri : router.pathname.startsWith(uri);
+
                       return (
                         <NavigationSubList active={active} key={key}>
                           <Link href={uri}>

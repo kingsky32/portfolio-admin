@@ -11,6 +11,9 @@ const Container = styled.div<{ size?: number }>`
   width: ${({ size }) => `${size}rem`};
   height: ${({ size }) => `${size}rem`};
   border-radius: ${({ size }) => `${size}rem`};
+  background-color: var(--profile-background);
+  border: 1px solid var(--profile-border-color);
+  padding: 0.5rem;
   overflow: hidden;
 `;
 

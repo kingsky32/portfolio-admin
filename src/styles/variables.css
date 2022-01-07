@@ -23,7 +23,6 @@
   --header-background: #1f2033;
 
   --menu-background: #18181b;
-  --menu-list-height: 4.5rem;
   --menu-text: #ffffff;
   --menu-active-text: #ffffff;
   --menu-active-text-background: #1d1e2f;
@@ -36,4 +35,7 @@
   --caret-color: #ffffff;
 
   --button-height: 4.5rem;
+
+  --profile-background: #ffffff;
+  --profile-border-color: #fefefe;
 }
